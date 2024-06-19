@@ -1,0 +1,9 @@
+ID,Design requirement,Test case,Coverage,Verification approach,,Priority,Type
+,,,,Checkers,Reference model,,
+1,It shall be possible to reset the state of the saturation filter by toggling the RST input signal,test_sat_filter_default_seq,N/A,Yes,N/A,Medium,Design
+2,All signals shall react to the rising edge of the input CLK signal.,test_sat_filter_default_seq,N/A,N/A,N/A,Medium,Design
+3,"The saturation functionality of the design shall be evaluated with the threshold parameter value. If the data is below the limits it is propagated to the output on the next rising edge of the CLK signal. Otherwise, the data is saturated and the out_data signal will be the threshold value instead.","test_sat_filter_default_seq
+test_sat_filter_rand_n_seq
+test_sat_filter_acc_seq",covergroup_sat_filter,N/A,Yes,High,Design
+4,The in_valid signal is always propagated to the output on next the rising edge of the CLK signal.,test_sat_filter_default_seq,N/A,Yes,N/A,High,Design
+5,The SAT shall be compliant with the sSDT (simple SyoSil Data Transfer) protocol.,test_sat_filter_default_seq,covergroup_ssdt,Yes,N/A,High,Protocol
